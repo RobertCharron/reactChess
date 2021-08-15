@@ -55,7 +55,19 @@ const Row = ({value, handleClick}) => {
     }
 
     function determinePieceColour(column) {
-
+        if(rowValue % 2 == 0) {
+            if(column % 2 == 0) {
+                return "white";
+            } else {
+                return "black";
+            }
+        } else {
+            if(column % 2 == 0) {
+                return "black";
+            } else {
+                return "white";
+            }
+        }
     }
 
     return (

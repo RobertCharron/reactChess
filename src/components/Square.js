@@ -16,6 +16,9 @@ import {ReactComponent as BlackBishop} from '../images/bbishop.svg';
 const Square = ({value, piece, colour, handleClick}) => {
     const [squareValue] = useState(value);
     const [currentPiece, setCurrentPiece] = useState(piece);
+    const [squareColour] = useState(colour);
+
+    const classes = "chess-square square square-" + squareColour;
 
     function getPiece() {
         switch(currentPiece) {
@@ -49,7 +52,7 @@ const Square = ({value, piece, colour, handleClick}) => {
     }
 
     return (
-        <button className="chess-square square" onClick={() => { handleClick(squareValue, (piece) => setCurrentPiece(piece)) }}>
+        <button className={`${classes}`} onClick={() => { handleClick(squareValue, (piece) => setCurrentPiece(piece), piece) }}>
             {getPiece()}
         </button>
     );

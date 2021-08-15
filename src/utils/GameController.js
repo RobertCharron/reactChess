@@ -24,5 +24,9 @@ class GameController{
         this.white = new Player();
         this.black = new Player();
     }
+
+    validMove(piece, square) {
+        return true;
+    }
 }
 export default GameController;
